@@ -9,6 +9,11 @@ class Level:
         self.routes = {}
         self.items = []
 
+    def open_level(self):
+        """Return the level description"""
+        # TODO: load up any events that may be present
+        return self.desc
+
     def add_route(self, direction, target):
         """Add a single route pointing to a level to the level"""
         self.routes[direction] = target
@@ -41,4 +46,14 @@ class Level:
         if item not in self.items:
             return
         self.items.remove(item)
+
+"""
+HELPER FUNCTIONS
+"""
+
+def change_level(direction):
+    if direction not in LEVEL.routes:
+        return
+    LEVEL = LEVEL.go_route(direction)
+    return LEVEL.open_level()
 

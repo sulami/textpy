@@ -16,15 +16,21 @@ class Item:
         """Add the item to a level"""
         level.add_item(self)
 
+    def rm_from_level(self, level):
+        """Remove the item from a level"""
+        if self not in level.items:
+            return
+        level.items.remove(self)
+
     def add_to_inventory(self):
         """Add the item to the inventory"""
-        player.inventory.append(self)
+        INVENTORY.append(self)
 
     def rm_from_inventory(self):
         """Remove the item from the inventory"""
-        if self not in player.inventory:
+        if self not in INVENTORY:
             return
-        player.inventory.remove(self)
+        INVENTORY.remove(self)
 
     def use(self):
         """Use the item if possible"""
