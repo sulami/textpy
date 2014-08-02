@@ -44,3 +44,10 @@ class Item:
             item.rm_from_inventory()
         self.useeffect()
 
+    def link_with(self, item):
+        """Make the item usable with another item"""
+        if item not in self.usablewith:
+            self.usablewith.append(item)
+        if self not in item.usablewith:
+            item.usablewith.append(self)
+
