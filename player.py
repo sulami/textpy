@@ -7,3 +7,7 @@ class Player:
         """Initialize an empty inventory"""
         self.inventory = []
 
+    def set_flag(self, **kwargs):
+        """Set arbitrary (global) flags to mark progress"""
+        self.__dict__.update(kwargs)
+
