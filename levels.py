@@ -37,7 +37,7 @@ class Level:
         item.add_to_inventory()
 
     def rm_item(self, item):
-        """Remove a single item from the level (first occurence only)"""
+        """Remove a single item from the level"""
         if item not in self.items:
             return
         self.items.remove(item)
