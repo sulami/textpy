@@ -40,5 +40,5 @@ class Level:
         """Remove a single item from the level (first occurence only)"""
         if item not in self.items:
             return
-        del self.items[self.items.index(item)]
+        self.items.remove(item)
 
