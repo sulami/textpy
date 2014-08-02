@@ -39,5 +39,9 @@ class Item:
         """Use the item with another item, if possible"""
         if not self.usable or item not in self.usablewith:
             return
+        if self.removeonuse:
+            self.rm_from_inventory()
+        if item.removeonuse:
+            item.rm_from_inventory()
         self.useeffect()
 
