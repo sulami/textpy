@@ -3,9 +3,9 @@
 class Level:
     """Handle everything that makes up a level"""
 
-    def __init__(self):
-        """Initialize empty level object"""
-        self.desc = "WARNING: Default description"
+    def __init__(self, desc):
+        """Initialize level object, requiring the description"""
+        self.desc = desc
         self.routes = {}
         self.items = []
 
