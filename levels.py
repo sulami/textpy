@@ -33,7 +33,7 @@ class Level:
         """Take an item from the level and add it to the inventory"""
         if item not in self.items:
             return
-        rm_item(self, item)
+        self.rm_item(item)
         # TODO: add to inventory
 
     def rm_item(self, item):
