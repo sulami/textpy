@@ -3,14 +3,13 @@
 class Item:
     """Handle all things items"""
 
-    def __init__(self, name, desc, usable=False, removeonuse=True,
-                 useeffect=None, usablewith=[]):
+    def __init__(self, name, desc, useeffect=None, removeonuse=True,
+                 usablewith=[]):
         """Initialize an item"""
         self.name = name
         self.desc = desc
-        self.usable = usable
-        self.removeonuse = removeonuse
         self.useeffect = useeffect
+        self.removeonuse = removeonuse
         self.usablewith = usablewith
 
     def add_to_level(self, level):
@@ -29,7 +28,7 @@ class Item:
 
     def use(self):
         """Use the item if possible"""
-        if not self.usable:
+        if not self.useeffect:
             return
         if self.removeonuse:
             self.rm_from_inventory()
@@ -37,7 +36,7 @@ class Item:
 
     def use_with(self, item):
         """Use the item with another item, if possible"""
-        if not self.usable or item not in self.usablewith:
+        if not self.useeffect or item not in self.usablewith:
             return
         if self.removeonuse:
             self.rm_from_inventory()
