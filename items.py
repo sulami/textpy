@@ -14,11 +14,13 @@ class Item:
 
     def add_to_inventory(self):
         """Add the item to the inventory"""
-        pass
+        player.inventory.append(self)
 
     def rm_from_inventory(self):
         """Remove the item from the inventory"""
-        pass
+        if self not in player.inventory:
+            return
+        player.inventory.remove(self)
 
     def use(self):
         """Use the item if possible"""
