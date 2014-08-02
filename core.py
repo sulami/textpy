@@ -2,7 +2,7 @@
 
 def play():
     """Start a basic new game"""
-    P = player()
+    P = Player()
     INVENTORY = P.inventory
 
 if __name__ == "__main":
