@@ -54,8 +54,14 @@ HELPER FUNCTIONS
 """
 
 def change_level(direction):
+    """Open a direction and change LEVEL accordingly"""
     if direction not in LEVEL.routes:
         return
     LEVEL = LEVEL.go_route(direction)
     return LEVEL.open_level()
+
+def link_levels(l_one, d_one, l_two, d_two):
+    """Link two levels"""
+    l_one.routes[d_one] = l_two
+    l_two.routes[d_two] = l_one
 
