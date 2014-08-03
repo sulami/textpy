@@ -3,11 +3,12 @@
 class Item:
     """Handle all things items"""
 
-    def __init__(self, name, desc, useeffect=None, removeonuse=True,
+    def __init__(self, name, desc, aliases=[], useeffect=None, removeonuse=True,
                  usablewith=[]):
         """Initialize an item"""
         self.name = name
         self.desc = desc
+        self.aliases = aliases
         self.useeffect = useeffect
         self.removeonuse = removeonuse
         self.usablewith = usablewith
