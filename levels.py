@@ -3,15 +3,17 @@
 class Level:
     """Handle everything that makes up a level"""
 
-    def __init__(self, desc):
+    def __init__(self, desc, routes={}, items=[], events=[]):
         """Initialize level object, requiring the description"""
         self.desc = desc
-        self.routes = {}
-        self.items = []
+        self.routes = routes
+        self.items = items
+        self.events = events
 
     def open_level(self):
         """Return the level description"""
-        # TODO: load up any events that may be present
+        for event in self.events:
+            event.trigger()
         return self.desc
 
     def add_route(self, direction, target):
