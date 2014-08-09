@@ -8,6 +8,7 @@ def play():
     """Start a basic new game"""
     P = Player()
     INVENTORY = P.inventory
+    LEVEL = None
 
 if __name__ == "__main":
     play()
